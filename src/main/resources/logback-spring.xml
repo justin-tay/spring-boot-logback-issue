@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<variable name="JSON_FACTORY_DECORATOR" value="net.logstash.logback.decorate.NullJsonFactoryDecorator" />
+	<include resource="stdout-appender.xml" />
+	<root level="DEBUG">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

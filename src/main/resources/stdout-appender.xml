@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE included>
+<!-- Base logback configuration -->
+<included>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<target>
+			System.out
+		</target>
+		<encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+			<jsonFactoryDecorator class="${JSON_FACTORY_DECORATOR}" />
+			<providers>
+				<timestamp>
+					<fieldName>
+						timestamp
+					</fieldName>
+				</timestamp>
+				<logLevel>
+					<fieldName>
+						level
+					</fieldName>
+				</logLevel>
+				<logLevelValue>
+					<fieldName>
+						levelValue
+					</fieldName>
+				</logLevelValue>
+				<loggerName>
+					<fieldName>
+						loggerName
+					</fieldName>
+				</loggerName>
+				<threadName>
+					<fieldName>
+						threadName
+					</fieldName>
+				</threadName>
+				<mdc>
+				</mdc>
+				<message>
+					<fieldName>
+						message
+					</fieldName>
+				</message>
+			</providers>
+		</encoder>
+	</appender>
+</included>
